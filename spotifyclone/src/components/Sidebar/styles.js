@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Spinner } from '../Loading/styles';
 
 export const Container = styled.aside`
   height: 100%;
@@ -16,18 +17,20 @@ export const Container = styled.aside`
 `;
 export const Nav = styled.ul`
   list-style: none;
-  margin-top: 25px;
+  margin-top: 20px;
 
   &:first-child {
     margin: 0;
   }
   li {
+    display: flex;
+    align-items: center;
     a {
       color: inherit;
       text-decoration: none;
       font-size: 13px;
       line-height: 32px;
-      font-weight:${props => (props.main ? 'bold' : 'normal')}
+      font-weight: ${props => (props.main ? 'bold' : 'normal')};
 
       &:hover {
         color: #fff;
@@ -40,6 +43,10 @@ export const Nav = styled.ul`
         font-weight: 300;
       }
     }
+    ${Spinner} {
+      height: 15px;
+      margin-left: 5px;
+    }
   }
 `;
 
@@ -47,7 +54,7 @@ export const NewPlaylist = styled.button`
   background: transparent;
   border: 0;
   border-top: 1px solid #282828;
-  font-size: 13px;
+  font-size: 15px;
   color: #b3b3b3;
   display: flex;
   align-items: center;
